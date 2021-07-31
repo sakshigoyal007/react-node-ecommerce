@@ -4,6 +4,7 @@
         "name": "Touareg",
         "image": "/images/p1.jpg",
         "cost": "677.32",
+        "stock_count":2,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
@@ -17,6 +18,7 @@
         "name": "DeVille",
         "image": "/images/p2.jpg",
         "cost": "3474.41",
+        "stock_count":10,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
@@ -30,6 +32,7 @@
         "name": "F250",
         "image": "/images/p7.jpg",
         "cost": "2878.07",
+        "stock_count":5,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
@@ -43,6 +46,7 @@
         "name": "KLY",
         "image": "/images/p3.jpg",
         "cost": "4379.01",
+        "stock_count":7,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
@@ -56,6 +60,7 @@
         "name": "MKX",
         "image":"/images/p9.jpg",
         "cost": "3274.66",
+        "stock_count":9,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
@@ -69,6 +74,7 @@
         "name": "Accord",
         "image":"/images/p10.jpg",
         "cost": "758.8",
+        "stock_count":8,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
@@ -82,6 +88,7 @@
         "name": "Suburban 2500",
         "image": "/images/p11.jpg",
         "cost": "2691.62",
+        "stock_count":3,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
@@ -95,6 +102,7 @@
         "name": "LR2",
         "image": "/images/p4.jpg",
         "cost": "4801.29",
+        "stock_count":14,
         "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         "bullet_description": [
             "Capacity Spacious: The 2 person tent designed for a roomy and convenient experience. The camping tent with an interior center height of 47 inches and 82.7 x 82.7 inches base dimensions, it is a spacious camp tent with plenty of space for you",
