@@ -17,11 +17,11 @@ min-height: 100%;
 header{
   grid-area: header;
   background-color: rgb(32, 48, 64);
-  
+
   /* fixed header */
-  position: sticky;
+  /* position: sticky;
   top:0;
-  z-index: 1;
+  z-index: 1; */
 }
 
 main{
@@ -161,5 +161,10 @@ button.cart{
   background-color: #f0c040;
 }
 button.block{
+  width: 100%;
+}
+
+.img-small{
+  max-width: 5rem;
   width: 100%;
 }

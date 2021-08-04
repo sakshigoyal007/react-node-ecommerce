@@ -8,8 +8,12 @@ import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 
 export default function ProductDisplay(props) {
+    const [isLoading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
+    const [quantity, setQuantity] = useState(1);
+    const[isAdded,setIsAdded]=useState(false);
 
+    /*
     useEffect(() => {
         fetch("https://610595364b92a000171c5f79.mockapi.io/node-ecommerce/products")
             .then((response) => response.json())
@@ -17,19 +21,56 @@ export default function ProductDisplay(props) {
                 console.log(json);
                 setProducts(json);
             });
-    }, [])
+    }, []);
+    */
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch("https://610595364b92a000171c5f79.mockapi.io/node-ecommerce/products");
+                const data = await response.json();
+                setProducts(data);
+                setLoading(false);
+            } catch (e) {
+                console.error(e);
+            }
+        };
+        fetchData();
+    }, []);
+
 
     const item = products.find((product) => product.id === props.match.params.id);
-    const [quantity, setQuantity] = useState(1);
-    console.log(item);
-    const handleCart = () => {
-        // let history=useHistory();
+
+    const updateCart=(record)=>{
+        const qty=record.quantity+ parseInt(quantity);
+        let apiUrl = "https://610595364b92a000171c5f79.mockapi.io/node-ecommerce/cart/" + record.id;
+        fetch(apiUrl, {
+            method: 'PUT',
+            body: JSON.stringify({
+                name: item.name,
+                image: item.image,
+                price: parseInt(item.cost),
+                countInStock: item.stock_count,
+                productId: item.id,
+                quantity: qty
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(response => response.json())
+            .then(result => {
+                // props.history.push(`/cart/${item.id}?qty=${quantity}`);
+            });
+
+    }
+
+    const addToCart=()=>{
         fetch("https://610595364b92a000171c5f79.mockapi.io/node-ecommerce/cart", {
             method: 'POST',
             body: JSON.stringify({
                 name: item.name,
                 image: item.image,
-                price: item.cost,
+                price: parseInt(item.cost),
                 countInStock: item.stock_count,
                 productId: item.id,
                 quantity: parseInt(quantity)
@@ -39,14 +80,32 @@ export default function ProductDisplay(props) {
             }
         }).then(response => response.json())
             .then(result => {
-                props.history.push(`/cart/${item.id}?qty=${quantity}`);
+                // props.history.push(`/cart/${item.id}?qty=${quantity}`);
             });
 
+    }
+    const handleCart = () => {
+        fetch("https://610595364b92a000171c5f79.mockapi.io/node-ecommerce/cart")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                const record=data.find((d)=>d.productId=== item.id);
+                (record!=null) ? updateCart(record) : addToCart();
+                setIsAdded(true);
+            });
 
     }
-    if (!item) {
-        return <div>Product Not Found</div>
+
+   const handleGoToCart=()=>{
+        props.history.push('/cart');
     }
+    
+    if (isLoading) {
+        return <div className="row">Loading...</div>;
+      }
+    else if(!item)
+      return <div className="row">Product Not Found!</div>
+    
     return (
         <div style={{ textAlign: "start" }}>
             <Link to="/">
@@ -107,7 +166,12 @@ export default function ProductDisplay(props) {
                                             </div>
                                         </li>
                                         <li>
-                                            <button className="cart block" onClick={handleCart}>Add to Cart</button>
+                                            {
+                                                (isAdded)?
+                                                <button className="cart block" onClick={handleGoToCart}>Go to Cart</button>
+                                                :
+                                                <button className="cart block" onClick={handleCart}>Add to Cart</button>
+                                            }
                                         </li>
                                     </>
                                 )

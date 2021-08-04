@@ -15,7 +15,7 @@ function App() {
         <main>
           <Router>
             <div>
-            <Route path='/cart/:id?' component={CartPage} />
+            <Route path='/cart' component={CartPage} />
               <Route path='/' exact component={HomePage} />
               <Route path='/product/:id' component={ProductDisplay} />
              
