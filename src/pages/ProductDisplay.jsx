@@ -1,11 +1,12 @@
 import React, { Component, useEffect, useState } from 'react';
 // import coffee from '@fortawesome/fontawesome-free';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDoubleLeft } from '@fortawesome/fontawesome-free-solid';
+import { faAngleDoubleLeft, faArrowRight, faLongArrowAltRight } from '@fortawesome/fontawesome-free-solid';
 import { Link } from 'react-router-dom';
 import productsList from '../data/products.json';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import ReactLoading  from 'react-loading';
 
 export default function ProductDisplay(props) {
     const [isLoading, setLoading] = useState(true);
@@ -101,7 +102,8 @@ export default function ProductDisplay(props) {
     }
     
     if (isLoading) {
-        return <div className="row">Loading...</div>;
+        // return <div className="row">Loading...</div>;
+        return <div><ReactLoading className='loader' type={'spin'} color={'#0000ff'} /></div>
       }
     else if(!item)
       return <div className="row">Product Not Found!</div>
@@ -168,7 +170,10 @@ export default function ProductDisplay(props) {
                                         <li>
                                             {
                                                 (isAdded)?
-                                                <button className="cart block" onClick={handleGoToCart}>Go to Cart</button>
+                                                <>
+                                                <button className="cart block" onClick={handleGoToCart}>Go to Cart <FontAwesomeIcon icon={faLongArrowAltRight} size="1x" /></button>
+                                                
+                                                </>
                                                 :
                                                 <button className="cart block" onClick={handleCart}>Add to Cart</button>
                                             }

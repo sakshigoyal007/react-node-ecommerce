@@ -9,24 +9,25 @@ import CartPage from './pages/CartPage';
 
 function App() {
   return (
+    <Router>
     <div className="App">
       <div className="grid-container">
         <Header/>
         <main>
-          <Router>
+          
             <div>
             <Route path='/cart' component={CartPage} />
               <Route path='/' exact component={HomePage} />
               <Route path='/product/:id' component={ProductDisplay} />
              
             </div>
-          </Router>
         </main>
         <footer className="row center">
           All right reserved
         </footer>
       </div>
     </div>
+    </Router>
   );
 }
 

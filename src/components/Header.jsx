@@ -1,5 +1,6 @@
 import { Button } from '@material-ui/core';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header(props) {
 
@@ -10,7 +11,7 @@ export default function Header(props) {
     return (
         <header className="row">
             <div>
-                <Button style={{textDecoration:"none", fontSize:"1rem", color:"#ffffff", fontWeight:"bold"}} >SHOPLIFY</Button>
+                <Link to='/' style={{textDecoration:"none", fontSize:"2rem", color:"#ffffff", fontWeight:"bold"}}>SHOPLIFY</Link>
                 </div>
            <div>
             <a href="/Cart">Cart</a>

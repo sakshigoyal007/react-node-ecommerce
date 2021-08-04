@@ -64,6 +64,11 @@ a{
 a:hover{
   color: #ff8000;
 }
+
+.title{
+  color:blue
+}
+
 header a{
   color: #ffffff;
   padding: 1rem;
@@ -142,7 +147,7 @@ li{
   margin-top: 1rem;
 }
 
-button{
+select, button{
   margin-top: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -154,7 +159,7 @@ button{
   background-color: #f8f8f8;
   cursor: pointer;
 }
-button:hover{
+select:hover,button:hover{
   border: 0.1rem #404040 solid;
 }
 button.cart{
@@ -167,4 +172,14 @@ button.block{
 .img-small{
   max-width: 5rem;
   width: 100%;
+}
+
+.loader{
+  color:#0000FF;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  height: 10%;
+  width: 10%;
 }
